@@ -1,0 +1,62 @@
+body {
+    background-color: #111;
+    display: grid;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    place-items: center;
+	transition: background-color 1000ms;
+}
+
+@font-face {
+    font-family: "Work Sans";
+    src: url("meta/WorkSans-Black.ttf");
+}
+
+.word {
+    color: white;
+    font-family: "Work Sans", sans-serif;
+	font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(3em, 2vw, 3em);
+    text-align: center;
+    margin: 0;
+	transition: all 800ms;
+}
+
+#main-text:has(.word:hover) .word:not(.word:hover) {
+	opacity: 0.2;
+}
+
+a {
+	text-decoration: none;
+}
+
+.letter {
+	margin: 0rem;
+	display: inline-block;
+	transition: all 800ms;
+}
+
+#main-text {
+	width: 90vw;
+}
+
+.line {
+	display: flex;
+	justify-content: space-evenly;
+	width: 70vw;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 800px)  {
+    .word {
+        font-size: clamp(1.5em, 2vw, 3em);
+    }
+}
+
+@media (max-width: 1000px)  {
+	.line {
+		width: 90vw;
+	}
+}
